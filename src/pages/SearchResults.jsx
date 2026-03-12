@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import { Loader2, SearchX } from "lucide-react";
+import { ArrowLeft, Loader2, SearchX } from "lucide-react";
 import MealCard from "../components/MealCard";
 
 const SearchResults = () => {
   const { searchTerm } = useParams();
+  const navigate = useNavigate();
 
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -42,7 +43,15 @@ const SearchResults = () => {
   return (
     <div className="w-full min-h-screen bg-orange-50 py-8 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-10">
+        <button
+          onClick={() => navigate(`/`)}
+          className="inline-flex items-center gap-2 text-orange-600 font-bold hover:text-orange-700 transition-colors mb-4 cursor-pointer"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Back to Home
+        </button>
+
+        <div className="mb-6">
           <h1 className="text-3xl md:text-4xl font-black text-gray-900 tracking-tight">
             Search Results for "
             <span className="text-orange-500">{searchTerm}</span>"

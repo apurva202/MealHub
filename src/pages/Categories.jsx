@@ -4,52 +4,6 @@ import axios from "axios";
 import { Loader2 } from "lucide-react";
 
 const Categories = () => {
-  // // Manual test data following TheMealDB API structure
-  // const categoryList = [
-  //   {
-  //     idCategory: "1",
-  //     strCategory: "Beef",
-  //     strCategoryThumb: "https://www.themealdb.com/images/category/beef.png",
-  //     strCategoryDescription:
-  //       "Beef is the culinary name for meat from cattle, particularly skeletal muscle.",
-  //   },
-  //   {
-  //     idCategory: "2",
-  //     strCategory: "Chicken",
-  //     strCategoryThumb: "https://www.themealdb.com/images/category/chicken.png",
-  //     strCategoryDescription:
-  //       "Chicken is a type of domesticated fowl, a subspecies of the red junglefowl.",
-  //   },
-  //   {
-  //     idCategory: "3",
-  //     strCategory: "Dessert",
-  //     strCategoryThumb: "https://www.themealdb.com/images/category/dessert.png",
-  //     strCategoryDescription:
-  //       "Dessert is a course that concludes a meal, usually consisting of sweet foods.",
-  //   },
-  //   {
-  //     idCategory: "4",
-  //     strCategory: "Lamb",
-  //     strCategoryThumb: "https://www.themealdb.com/images/category/lamb.png",
-  //     strCategoryDescription:
-  //       "Lamb, hogget, and mutton are the meat of domestic sheep at different ages.",
-  //   },
-  //   {
-  //     idCategory: "5",
-  //     strCategory: "Seafood",
-  //     strCategoryThumb: "https://www.themealdb.com/images/category/seafood.png",
-  //     strCategoryDescription:
-  //       "Seafood is any form of sea life regarded as food by humans.",
-  //   },
-  //   {
-  //     idCategory: "6",
-  //     strCategory: "Pasta",
-  //     strCategoryThumb: "https://www.themealdb.com/images/category/pasta.png",
-  //     strCategoryDescription:
-  //       "Pasta is a type of food typically made from an unleavened dough of wheat flour.",
-  //   },
-  // ];
-
   const [categoryList, setCategoryList] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -59,7 +13,6 @@ const Categories = () => {
       const response = await axios.get(
         `https://www.themealdb.com/api/json/v1/1/categories.php`,
       );
-      console.log(response.data.categories);
       setCategoryList(response.data.categories);
       setLoading(false);
     };

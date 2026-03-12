@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import { Heart, ExternalLink } from "lucide-react";
 
 const MealCard = ({ meal }) => {
-  const [isFavorited, setIsFavorited] = useState(false);
-  const navigate = useNavigate();
 
-  const toggleFavorite = (e) => {
+  const {favorites, toggleFavorite} = useOutletContext();
+
+  const isFavorited = favorites.some((fav) => fav.idMeal === meal.idMeal);
+
+  const heartClick = (e) => {
     e.preventDefault()
     e.stopPropagation();
-    setIsFavorited(!isFavorited);
+    toggleFavorite(meal);
   };
 
   return (
@@ -26,7 +28,7 @@ const MealCard = ({ meal }) => {
         />
 
         <button
-          onClick={toggleFavorite}
+          onClick={heartClick}
           className={`absolute top-3 right-3 p-2.5 rounded-full cursor-pointer z-20 shadow-md active:scale-75 transition-all
             ${
               isFavorited

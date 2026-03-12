@@ -1,38 +1,15 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import { Heart, ArrowLeft, ChefHat } from "lucide-react";
 import MealCard from "../components/MealCard";
 
 const Favorites = () => {
-  // DUMMY DATA: Simulating what you will eventually pull from LocalStorage
-  const [favorites, setFavorites] = useState([
-    {
-      idMeal: "52772",
-      strMeal: "Teriyaki Chicken Casserole",
-      strMealThumb: "https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg",
-    },
-    {
-      idMeal: "52871",
-      strMeal: "Yaki Udon",
-      strMealThumb: "https://www.themealdb.com/images/media/meals/wrstkv1608686063.jpg",
-    },
-    {
-      idMeal: "52959",
-      strMeal: "Baked salmon with fennel & tomatoes",
-      strMealThumb: "https://www.themealdb.com/images/media/meals/1548772327.jpg",
-    },
-    {
-      idMeal: "52802",
-      strMeal: "Fish pie",
-      strMealThumb: "https://www.themealdb.com/images/media/meals/ysxwuq1487323065.jpg",
-    }
-  ]);
+  const {favorites, toggleFavorite} = useOutletContext();
 
   return (
     <div className="w-full min-h-screen bg-orange-50 py-8 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         
-        {/* Header Section */}
         <div className="mb-10">
           <Link
             to="/"
@@ -57,7 +34,6 @@ const Favorites = () => {
           </div>
         </div>
 
-        {/* Conditional Rendering: Grid vs Empty State */}
         {favorites.length > 0 ? (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
             {favorites.map((meal) => (
@@ -65,7 +41,6 @@ const Favorites = () => {
             ))}
           </div>
         ) : (
-          /* Empty State (For later when you hook up real state) */
           <div className="bg-white rounded-3xl p-12 text-center border border-orange-100 shadow-sm max-w-2xl mx-auto mt-12">
             <div className="bg-orange-50 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6">
               <ChefHat className="w-12 h-12 text-orange-300" />
