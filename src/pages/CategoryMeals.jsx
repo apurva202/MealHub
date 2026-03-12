@@ -33,7 +33,7 @@ const CategoryMeals = () => {
           className="inline-flex items-center gap-2 text-orange-600 font-bold hover:text-orange-700 transition-colors mb-6 group"
         >
           <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-          Back to Categories
+          Back to Home
         </Link>
 
         <h1 className="text-4xl font-black text-gray-900 capitalize tracking-tight">

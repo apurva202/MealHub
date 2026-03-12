@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import Categories from './pages/Categories'
 import CategoryMeals from './pages/CategoryMeals'
 import MealDetails from './pages/MealDetails'
+import Favorites from './pages/Favorites'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
           <Route index element={<Categories />} />
           <Route path='categories/:category' element={<CategoryMeals />} />
           <Route path='meals/:meal' element={<MealDetails />} />
+          <Route path='favorites' element={<Favorites />} />
         </Route>
       </Routes>
     </>
