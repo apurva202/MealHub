@@ -42,7 +42,7 @@ const MealCard = ({ meal }) => {
       </div>
 
       <div className="flex flex-col grow px-1">
-        <h3 className="text-lg font-bold text-gray-800 line-clamp-1">
+        <h3 className="text-lg font-bold text-gray-800 line-clamp-2">
           {meal.strMeal}
         </h3>
 
