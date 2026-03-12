@@ -1,5 +1,5 @@
 import React from "react";
-import CategorieCard from "../components/CategoryCard";
+import CategoryCard from "../components/CategoryCard";
 
 const Categories = () => {
   // Manual test data following TheMealDB API structure
@@ -62,7 +62,7 @@ const Categories = () => {
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6 max-w-7xl mx-auto">
         {categoryList.map((category) => (
-          <CategorieCard key={category.idCategory} category={category} />
+          <CategoryCard key={category.idCategory} category={category} />
         ))}
       </div>
     </div>
