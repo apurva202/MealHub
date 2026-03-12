@@ -75,11 +75,11 @@ const MealDetails = () => {
             <img
               src={mealData.strMealThumb}
               alt={mealData.strMeal}
-              className="w-90 h-90 rounded-2xl object-contain"
+              className="max-h-full rounded-2xl shadow-md"
             />
           </div>
 
-          <div className="p-6 py-4 md:p-10">
+          <div className="p-6 md:p-10">
             <div className="mb-8">
               <h1 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">
                 {mealData.strMeal}
@@ -96,7 +96,7 @@ const MealDetails = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
               <div className="md:col-span-1 bg-orange-50/50 p-6 rounded-2xl border border-orange-100 h-fit">
                 <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
                   Ingredients
