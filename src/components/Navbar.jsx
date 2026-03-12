@@ -27,9 +27,9 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="order-last md:order-0 w-full md:w-auto md:flex-1 max-w-lg mx-auto md:mx-4">
+        <div className="order-last md:order-0 md:w-auto md:flex-1 max-w-lg mx-auto md:mx-4">
           <form 
-          className="flex items-center bg-white/70 rounded-full border border-orange-200/60 overflow-hidden shadow-sm focus-within:ring-2 focus-within:ring-orange-400 focus-within:bg-white transition-all hover:bg-white/90"
+          className="flex items-center bg-white/70 rounded-full border overflow-hidden border-orange-200/60 shadow-sm focus-within:ring-2 focus-within:ring-orange-400 focus-within:bg-white transition-all hover:bg-white/90"
           onSubmit={handleSearchSubmit}
           >
             <input
@@ -41,7 +41,7 @@ const Navbar = () => {
             />
             <button
               type="submit"
-              className="bg-orange-400 cursor-pointer hover:bg-orange-500 text-white px-6 py-2.5 flex items-center justify-center transition-all duration-300"
+              className="bg-orange-400 cursor-pointer hover:bg-orange-500 text-white pl-3 pr-3.5 py-2.5 transition-all duration-300"
               aria-label="Search"
             >
               <Search className="w-5 h-5" />

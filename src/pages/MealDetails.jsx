@@ -45,7 +45,7 @@ const MealDetails = () => {
 
   if (loading) {
     return (
-      <div className="w-full min-h-screen bg-orange-50 flex items-center justify-center">
+      <div className="w-full pt-50 bg-orange-50 flex items-center justify-center">
         <Loader2 className="w-12 h-12 text-orange-500 animate-spin" />
       </div>
     );
