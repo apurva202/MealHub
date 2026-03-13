@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { ArrowLeft, Youtube, Utensils, Globe, Loader2 } from "lucide-react";
+import { ArrowLeft, Youtube, Utensils, Globe, Loader2, ExternalLink } from "lucide-react";
 
 const MealDetails = () => {
   const { meal: mealId } = useParams();
@@ -134,16 +134,33 @@ const MealDetails = () => {
                 </div>
 
                 {mealData.strYoutube && (
-                  <div className="mt-8 pt-6 border-t border-gray-100">
-                    <a
-                      href={mealData.strYoutube}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-rose-500 hover:bg-rose-600 text-white px-6 py-3 rounded-xl font-bold transition-colors"
-                    >
-                      <Youtube className="w-5 h-5" />
-                      Watch Video Tutorial
-                    </a>
+                 <div className="mt-7 pt-5 border-t border-orange-100/50">
+                    <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                      <Youtube className="w-7 h-7 text-rose-500" />
+                      Video Tutorial
+                    </h3>
+                    
+                    <div className="w-full aspect-video rounded-2xl overflow-hidden shadow-sm border border-orange-200 bg-black">
+                      <iframe
+                        className="w-full h-full"
+                        src={mealData.strYoutube.replace("watch?v=", "embed/")}
+                        title={`${mealData.strMeal} Video Tutorial`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+
+                    <div className="mt-3 flex items-center justify-between text-sm px-1">
+                      <p className="text-gray-500">Video private or unavailable?</p>
+                      <a 
+                        href={`https://www.youtube.com/results?search_query=${encodeURIComponent(mealData.strMeal + " recipe")}`} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-rose-500 hover:text-rose-600 font-semibold flex items-center gap-1 transition-colors"
+                      >
+                        Search for another tutorial <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </div>
                   </div>
                 )}
               </div>
