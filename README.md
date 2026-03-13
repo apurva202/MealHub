@@ -1,16 +1,167 @@
-# React + Vite
+# 🍲 MealHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MealHub is a modern React recipe explorer that allows users to browse meal categories, view recipes, search for meals, and save favorites.
+It uses **TheMealDB API** to fetch real meal data and is built with **React, React Router, Axios, and Tailwind CSS**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+* 🔎 **Search Recipes**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+  * Search any meal using the navbar search bar.
 
-## Expanding the ESLint configuration
+* 📂 **Browse Categories**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  * Explore meals organized into categories.
+
+* 🍽 **Meal Details**
+
+  * View ingredients, measurements, instructions, and a YouTube tutorial.
+
+* ❤️ **Favorites System**
+
+  * Save meals to favorites.
+  * Stored in **localStorage** so favorites persist after refresh.
+
+* 📱 **Responsive UI**
+
+  * Fully responsive layout for mobile, tablet, and desktop.
+
+* ⚡ **Fast Navigation**
+
+  * Powered by **React Router DOM** for smooth client-side routing.
+
+---
+
+## 🛠 Tech Stack
+
+* **React**
+* **React Router DOM**
+* **Axios**
+* **Tailwind CSS**
+* **Lucide React Icons**
+* **TheMealDB API**
+
+---
+
+## 📡 API Used
+
+This project uses the free recipe API:
+```
+https://www.themealdb.com/api.php
+```
+
+Endpoints used:
+
+* Categories
+
+```
+https://www.themealdb.com/api/json/v1/1/categories.php
+```
+
+* Meals by Category
+
+```
+https://www.themealdb.com/api/json/v1/1/filter.php?c={category}
+```
+
+* Meal Details
+
+```
+https://www.themealdb.com/api/json/v1/1/lookup.php?i={id}
+```
+
+* Search Meals
+
+```
+https://www.themealdb.com/api/json/v1/1/search.php?s={name}
+```
+
+---
+
+## 📁 Project Structure
+
+```
+src
+│
+├── assets
+│
+├── components
+│   ├── CategoryCard.jsx
+│   ├── MealCard.jsx
+│   └── Navbar.jsx
+│
+├── layout
+│   └── Layout.jsx
+│
+├── pages
+│   ├── Categories.jsx
+│   ├── CategoryMeals.jsx
+│   ├── Favorites.jsx
+│   ├── MealDetails.jsx
+│   └── SearchResults.jsx
+│
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+---
+
+## 🧭 Application Routes
+
+| Route                   | Description                |
+| ----------------------- | -------------------------- |
+| `/`                     | View all categories        |
+| `/categories/:category` | Meals in selected category |
+| `/meals/:meal`          | Meal details               |
+| `/favorites`            | Saved favorite meals       |
+| `/search/:searchTerm`   | Search results             |
+
+---
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/mealhub.git
+```
+
+Go into the project directory:
+
+```bash
+cd mealhub
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+---
+
+## 💾 Favorites Storage
+
+Favorites are saved using **localStorage**:
+
+```javascript
+localStorage.setItem("mealHub_favorites", JSON.stringify(favorites));
+```
+
+This allows favorites to persist between sessions.
+
+---
+
+
+## 👨‍💻 Author
+
+**Apurva Patil**
