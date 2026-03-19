@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from './Layout/Layout'
+import Layout from './layout/Layout'
 import { Route, Routes } from 'react-router-dom'
 import Categories from './pages/Categories'
 import CategoryMeals from './pages/CategoryMeals'
